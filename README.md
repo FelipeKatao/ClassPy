@@ -3,4 +3,4 @@
 
 With this library, improve support for object orientation with python, being able to create private methods, interfaces, and partial classes. 
 
-<div style="color:#1C1C1C">🏖️ This project is still under development ...</div>
+🏖️ $\textcolor{red}{\textsf{This project is still under development ....}}$
