@@ -168,7 +168,6 @@ class Classpy(ClassFlag):
                             Count_error+=1
                             raise RuntimeError(f"  :the function {Implement_error} has not been implemented from the Source Interface, implement the method in the class")
                         Validation_element = False
-                    #Out While
                     index_value+=1
             except Exception as w:
                 print("execpt"+str(w))
