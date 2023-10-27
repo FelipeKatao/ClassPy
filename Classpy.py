@@ -1,5 +1,6 @@
+from .flagsClass import ClassFlag
 
-class Classpy:
+class Classpy(ClassFlag):
     def __init__(self,className) -> None:
         """Creating class protection, in className pass the name of the 
         class that is being used in the current context.
@@ -13,10 +14,7 @@ class Classpy:
          def __init__(self):
          class_py = ClassPy(TestClass)
         """
-        self.OBJECTKEY = [className.__class__,dir(className)]
-        self.OBJECTNAME = "0"
-        self.CLASSNAME = className
-        self.Parcials_class = []
+        super().__init__(className)    
   
     def Private(self):
         """
