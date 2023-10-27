@@ -127,3 +127,40 @@ class Classpy(ClassFlag):
         if(ParcialClasses == None):
             return self.Parcials_class[Index]
         return ParcialClasses[Index]
+    
+    def Interface_implement(self,*Interfaces):
+        Interfaces_Vector = []
+        CallFunctions = []
+        for i in Interfaces:
+            Interfaces_Vector.append(i)
+        def ValidateInterfaceClass(Interfaces):
+            index = 0
+            Based_funcs = []
+            while(index<len(Interfaces)):
+                for i in dir(Interfaces[index]):
+                    value = str(i)
+                    if(value.__contains__("__") == False):
+                        Based_funcs.append(value)
+                CallFunctions.append(Based_funcs)
+                index+=1
+                Based_funcs =[]
+ 
+            Implement_error = ""
+            try:
+                index_value = 1
+                Validation_element = False
+                while(len(CallFunctions)>index_value):
+                    for d in CallFunctions[index_value]:
+                        for d_in in CallFunctions[0]:
+                            Implement_error = d
+                            if(d_in == d):
+                                Validation_element = True
+                        if(Validation_element == False):
+                            raise ReferenceError(f"Function {Implement_error} has not been implemented from the Source Interface, implement the method in the class")
+                        Validation_element = False
+                    #Out While
+                    index_value+=1
+            except Exception as w:
+                print("execpt"+str(w))
+                pass
+        return ValidateInterfaceClass(Interfaces_Vector)

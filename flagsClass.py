@@ -6,3 +6,4 @@ class ClassFlag():
         self.CLASSNAME = className
         self.Parcials_class = []
         self.object_value_key = ""
+        self.Flag = ""
