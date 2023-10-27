@@ -7,3 +7,4 @@ class ClassFlag():
         self.Parcials_class = []
         self.object_value_key = ""
         self.Flag = ""
+        self.Implement_error =  None
