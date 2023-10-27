@@ -130,12 +130,35 @@ class Classpy(ClassFlag):
     
 
     def Interface(self,*Interfaces):
-        value = self.Interface_implement(*Interfaces)
+        """Creates an association between the chosen 
+        class and between one or more interfaces.
+        ----------
+        `*Interfaces : Class and Interface`
+         The first element returns your class (or self) and the second element
+         your interface implementation, you can use one or more 
+         interfaces after the first parameter that is your class.
+
+        -------
+        You can create an interface binding within your class::
+
+            class Iainterface():
+            class A():
+            def __init__(self):
+            self.classPy.Interface(self,
+            Iainterface)
+            ...
+        """
+        value = self.__Interface_implement(*Interfaces)
         if(value != 0):
             raise ReferenceError(f"  :the function {self.Implement_error} has not been implemented from the Source Interface, implement the method in the class")
 
 
-    def Interface_implement(self,*Interfaces):
+    def __Interface_implement(self,*Interfaces):
+        """Private method for Interface Methods.
+        ----------
+        `*interfaces`
+         Return Interfaces and classes association
+        """
         Interfaces_Vector = []
         CallFunctions = []
         for i in Interfaces:
