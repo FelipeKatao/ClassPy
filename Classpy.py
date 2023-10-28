@@ -1,4 +1,6 @@
 from .flagsClass import ClassFlag
+from .functionsClassPy import FunctionsClass
+from .propsFunction import PropsFunctions
 
 class Classpy(ClassFlag):
     def __init__(self,className) -> None:
@@ -193,6 +195,6 @@ class Classpy(ClassFlag):
                         Validation_element = False
                     index_value+=1
             except Exception as w:
-                print("execpt"+str(w))
+                 return "execpt"+str(w)
             return Count_error
         return ValidateInterfaceClass(Interfaces_Vector)

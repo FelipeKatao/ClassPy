@@ -1,6 +1,6 @@
+from .functionsClassPy import FunctionsClass
 
-
-class PropsClass():
+class PropsClass(FunctionsClass):
     def __init__(self,propName = None) -> None:
         self.PropKeys = {}
         pass

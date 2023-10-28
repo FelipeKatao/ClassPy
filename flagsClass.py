@@ -9,3 +9,5 @@ class ClassFlag(PropsClass):
         self.object_value_key = ""
         self.Flag = ""
         self.Implement_error =  None
+        self.METHOD_LIST = {}
+        self.Function_call = None
