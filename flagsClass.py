@@ -1,6 +1,7 @@
-
-class ClassFlag():
+from .propsClass import PropsClass
+class ClassFlag(PropsClass):
     def __init__(self,className) -> None:
+        super().__init__()
         self.OBJECTKEY = [className.__class__,dir(className)]
         self.OBJECTNAME = "0"
         self.CLASSNAME = className
