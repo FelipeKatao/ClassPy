@@ -38,4 +38,5 @@ class PropsClass():
                else:
                    self.PropKeys.update({i:0})
                index_base+=1
+        print(self.PropKeys)
                    
