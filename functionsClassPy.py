@@ -44,6 +44,20 @@ class FunctionsClass:
             self.Function_call(ClassSelf,Params[0],Params[1])
         if(CountElems == 3):
             self.Function_call(ClassSelf,Params[0],Params[1],Params[2])
+        if(CountElems == 4):
+            self.Function_call(ClassSelf,Params[0],Params[1],Params[2],Params[3])
+        if(CountElems == 5):
+            self.Function_call(ClassSelf,Params[0],Params[1],Params[2],Params[3],Params[4])
+        if(CountElems == 6):
+            self.Function_call(ClassSelf,Params[0],Params[1],Params[2],Params[3],Params[4],Params[5])
+        if(CountElems == 7):
+            self.Function_call(ClassSelf,Params[0],Params[1],Params[2],Params[3],Params[4],Params[5],Params[6])
+        if(CountElems == 8):
+            self.Function_call(ClassSelf,Params[0],Params[1],Params[2],Params[3],Params[4],Params[5],Params[6],Params[7])
+        if(CountElems == 9):
+            self.Function_call(ClassSelf,Params[0],Params[1],Params[2],Params[3],Params[4],Params[5],Params[6],Params[7],Params[8])
+        if(CountElems == 10):
+            self.Function_call(ClassSelf,Params[0],Params[1],Params[2],Params[3],Params[4],Params[5],Params[6],Params[7],Params[8],Params[9])
         
     def TransportOverload(self,ClassPy):
         ClassPy.METHOD_LIST = self.METHOD_LIST
