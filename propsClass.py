@@ -3,7 +3,6 @@ from .functionsClassPy import FunctionsClass
 class GenericType():
     GenericProp_val = ""
     def __init__(self) -> None:
-        self.hee= ""
         pass
 
     @property
@@ -20,6 +19,12 @@ class GenericType():
                 self.TGENRETUVALU = value
             else:
                 raise TypeError("Value type incompatible with the generic type created Type: "+str(self.TGENVALUE))
+            
+    def AddElementGenericList(self,element):
+        if(type(self.GenericValue[0]) == type(element)):
+            self.GenericValue.append(element)
+        else:
+          raise TypeError("Value type incompatible with the generic type created Type: "+str(type(self.GenericValue[0])))  
 
     
 class PropsClass(FunctionsClass,GenericType):

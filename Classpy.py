@@ -16,7 +16,9 @@ class Classpy(ClassFlag):
          def __init__(self):
          class_py = ClassPy(TestClass)
         """
-        super().__init__(className)    
+
+        super().__init__(className)
+  
   
     def Private(self):
         """

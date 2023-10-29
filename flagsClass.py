@@ -13,3 +13,4 @@ class ClassFlag(PropsClass):
         self.Function_call = None
         self.TGENVALUE = "Type"
         self.TGENRETUVALU = None
+        self.Object_base_generic = 0
