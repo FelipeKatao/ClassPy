@@ -15,7 +15,6 @@ class GenericType():
         if(self.TGENVALUE == "Type"):
             self.TGENRETUVALU = value
             self.TGENVALUE = type(value)
-            print(self.TGENVALUE)
         else:
             if(type(value) == self.TGENVALUE):
                 self.TGENRETUVALU = value
