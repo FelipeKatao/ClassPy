@@ -1,8 +1,9 @@
 from inspect import signature
 
-class FunctionsClass:
+class FunctionsClass():
     def __init__(self) -> None:
         pass
+        
     def CreateOverloadMethod(self,function):
         FuncName =  function.__name__
         try:

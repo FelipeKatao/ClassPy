@@ -1,8 +1,33 @@
 from .functionsClassPy import FunctionsClass
 
-class PropsClass(FunctionsClass):
+class GenericType():
+    GenericProp_val = ""
+    def __init__(self) -> None:
+        self.hee= ""
+        pass
+
+    @property
+    def GenericValue(self):
+        return self.TGENRETUVALU
+    
+    @GenericValue.setter
+    def GenericValue(self,value):
+        if(self.TGENVALUE == "Type"):
+            self.TGENRETUVALU = value
+            self.TGENVALUE = type(value)
+            print(self.TGENVALUE)
+        else:
+            if(type(value) == self.TGENVALUE):
+                self.TGENRETUVALU = value
+            else:
+                raise TypeError("Value type incompatible with the generic type created Type: "+str(self.TGENVALUE))
+
+    
+class PropsClass(FunctionsClass,GenericType):
     def __init__(self,propName = None) -> None:
+        super().__init__()
         self.PropKeys = {}
+        self.__a = "ola"
         pass
 
     def GetProp(self,Prop):
@@ -39,4 +64,6 @@ class PropsClass(FunctionsClass):
                    self.PropKeys.update({i:0})
                index_base+=1
         print(self.PropKeys)
+
+
                    
