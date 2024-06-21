@@ -1,8 +1,9 @@
 from inspect import signature
+from ClassPy.invokeclass import Invoke
 
-class FunctionsClass():
+class FunctionsClass(Invoke):
     def __init__(self) -> None:
-        pass
+        super().__init__()
         
     def CreateOverloadMethod(self,function):
         FuncName =  function.__name__
