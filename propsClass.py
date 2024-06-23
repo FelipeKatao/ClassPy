@@ -57,14 +57,13 @@ class PropsClass(FunctionsClass,GenericType):
 
         # Created new prop
         if("class" in str(type(PropName))):
-            #self.ClassUsed = PropName
-            #setattr(PropName, '__setattr__', self.__instanceProp)
             if("Nothing value or variable reach in the class Map." == self.Invoke(PropName,[varAtt,SetProps],"get")):
                 setattr(PropName,varAtt,SetProps)
                 setattr(self,varAtt,SetProps)
             self.PropKeys[str(PropName)+varAtt] = SetProps
             return str(PropName)+varAtt
         self.PropKeys[PropName] = SetProps
+
         return self.PropKeys[PropName]
 
     def Typing(self,obj):
