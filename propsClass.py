@@ -67,7 +67,7 @@ class PropsClass(FunctionsClass,GenericType):
         self.PropKeys[PropName] = SetProps
         return self.PropKeys[PropName]
 
-    def CreateTypeValues(self,obj):
+    def Typing(self,obj):
         self.ClassUsed = obj
         setattr(obj,'__setattr__', self.__instanceProp)
             
