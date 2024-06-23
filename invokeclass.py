@@ -30,6 +30,11 @@ class Invoke():
                 return InvokeReturn_a
             if(ClassSet == "invoke_list"):
                 return list(filter(lambda x:'__' not in x,dir(a)))
+        if(Type == "invoke"):
+            print(Parans)
+            if(Parans[1] != None):
+                return self.__CallbackMethosd(ClassObj,Parans[0],Parans[1])
+            return self.__CallbackMethosd(ClassObj,Parans[0])
         else:
             return self.__VarsSet(ClassObj,Parans,Type)
 

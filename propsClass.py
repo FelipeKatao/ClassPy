@@ -38,6 +38,7 @@ class PropsClass(FunctionsClass,GenericType):
         return self.PropKeys[Prop]    
     
     def SetProp(self,PropName,SetProps=None):
+        #print(type(PropName))
         self.PropKeys[PropName] = SetProps
         return self.PropKeys[PropName]
 
@@ -67,7 +68,6 @@ class PropsClass(FunctionsClass,GenericType):
                else:
                    self.PropKeys.update({i:0})
                index_base+=1
-        print(self.PropKeys)
 
 
                    
