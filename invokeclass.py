@@ -4,18 +4,32 @@ class Invoke():
         self.Type = {"Get":"get","Invoke":"invoke","Set":"set"}
         pass
 
+    def GetclassType(self,ClassObject,CompareObj=None):
+        Type_class = str(type(ClassObject))
+        Type_class = Type_class.replace("class ","").replace("<","").replace(">","").replace("__main__.","")
+        if(CompareObj!=None):
+            Type_compare = str(type(CompareObj))
+            Type_compare = Type_compare.replace("class ","").replace("<","").replace(">","").replace("__main__.","")
+            return Type_compare == Type_class
+        return Type_class
+    
     def Invoke(self,ClassObj,Parans={"Dict":0},Type="get",ClassSet="get"):  
         if(Type == "class"):
             a = ClassObj()
             if(ClassSet == "get" or ClassSet == "set"):
                 v_set =self.__VarsSet(a,Parans,ClassSet)
+                del a
                 if(ClassSet == "get"):
                     return v_set 
                 return a
             if(ClassSet == "invoke"):
                 if(Parans[1] == None):    
-                    return self.__CallbackMethosd(a,Parans[0])
-                return self.__CallbackMethosd(a,Parans[0],Parans[1])
+                    InovkeReturn = self.__CallbackMethosd(a,Parans[0])
+                    del a
+                    return InovkeReturn
+                InvokeReturn_a =  self.__CallbackMethosd(a,Parans[0],Parans[1])
+                del a
+                return InvokeReturn_a
         else:
             return self.__VarsSet(ClassObj,Parans,Type)
 
@@ -35,5 +49,7 @@ class Invoke():
         Method_call = getattr(Obj,Method)
         if(len(args) == 0):
             return Method_call()
-        return Method_call(*args[0],**kwargs[0])
+        if(len(args) == 1):
+            return Method_call(args[0],**kwargs)    
+        return Method_call(*args[0],**kwargs)
         
