@@ -16,12 +16,10 @@ class Invoke():
     def Invoke(self,ClassObj,Parans={"Dict":0},Type="get",ClassSet="get"):  
         if(Type == "class"):
             a = ClassObj()
-            if(ClassSet == "get" or ClassSet == "set"):
+            if(ClassSet == "set" or ClassSet == "get"):
                 v_set =self.__VarsSet(a,Parans,ClassSet)
                 del a
-                if(ClassSet == "get"):
-                    return v_set 
-                return a
+                return v_set
             if(ClassSet == "invoke"):
                 if(Parans[1] == None):    
                     InovkeReturn = self.__CallbackMethosd(a,Parans[0])
@@ -30,6 +28,8 @@ class Invoke():
                 InvokeReturn_a =  self.__CallbackMethosd(a,Parans[0],Parans[1])
                 del a
                 return InvokeReturn_a
+            if(ClassSet == "invoke_list"):
+                return list(filter(lambda x:'__' not in x,dir(a)))
         else:
             return self.__VarsSet(ClassObj,Parans,Type)
 
