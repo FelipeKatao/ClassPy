@@ -1,5 +1,6 @@
 from .functionsClassPy import FunctionsClass
 import warnings
+import types
 
 class GenericType():
     GenericProp_val = ""
@@ -33,6 +34,7 @@ class PropsClass(FunctionsClass,GenericType):
         super().__init__()
         self.PropKeys = {}
         self.__a = "ola"
+        self.ClassUsed = None
         pass
 
     def GetProp(self,Prop,varatt = None):
@@ -45,8 +47,6 @@ class PropsClass(FunctionsClass,GenericType):
        
         if("class" in str(type(PropName))):
                     if str(PropName)+varAtt in self.PropKeys:
-                        if(self.Invoke(PropName,[varAtt,SetProps],"get") == None):
-                           print("aqui é nulo")
                         if(type(self.Invoke(PropName,[varAtt,SetProps],"get")) == type(SetProps)):
                             self.Invoke(PropName,[varAtt,SetProps],"set")
                             self.PropKeys[str(PropName)+varAtt] = SetProps
@@ -57,13 +57,48 @@ class PropsClass(FunctionsClass,GenericType):
 
         # Created new prop
         if("class" in str(type(PropName))):
+            #self.ClassUsed = PropName
+            #setattr(PropName, '__setattr__', self.__instanceProp)
             if("Nothing value or variable reach in the class Map." == self.Invoke(PropName,[varAtt,SetProps],"get")):
                 setattr(PropName,varAtt,SetProps)
+                setattr(self,varAtt,SetProps)
             self.PropKeys[str(PropName)+varAtt] = SetProps
             return str(PropName)+varAtt
         self.PropKeys[PropName] = SetProps
         return self.PropKeys[PropName]
 
+    def CreateTypeValues(self,obj):
+        self.ClassUsed = obj
+        setattr(obj,'__setattr__', self.__instanceProp)
+            
+
+    def ModelView(self,ClassModel,NewModel):
+        Atributes = vars(ClassModel)
+        Atributes = {key: value for key, value in Atributes.items() if '__' not in key}
+        Atributes = {key: value for key, value in Atributes.items() if ' object at' not in key}
+        Class_name = str(self.__class__).replace("<class","").replace(">","").replace("'","").replace(" ","")
+        att_adds={}
+        for a in Atributes.items():
+            ab,ac ="<"+Class_name,str(a[1])
+            if (ab in ac) == False:
+                att_adds[a[0]] = a[1]
+        for i in att_adds.items():
+            self.SetProp(NewModel,i[1],i[0])
+            self.SetProp(self,i[1],i[0])
+
+
+
+    def __instanceProp(self,name,value):
+        expected_type = self.Invoke(self, [name,None], "get")
+        if not isinstance(value, type(expected_type)):
+            raise ValueError(f"Value being assigned is of the incorrect type, the expected type is: {type(expected_type)}")
+        self.__ModifyValue(self.ClassUsed,name,value)
+        self.__setattr__(name, value)
+        setattr(self.ClassUsed,name,value)
+
+
+    def __ModifyValue(self,object,name,value):
+        setattr(object,name,value)
 
     def Prop(self,PropName,*Props,**DefaultValues):
         

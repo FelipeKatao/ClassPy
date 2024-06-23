@@ -46,7 +46,7 @@ class Invoke():
         Value = Variables.setdefault(Parans[0],None)
         if(Value !=None and Type == "get"):
             return Value
-        elif(Value !=None and Type == "set"):
+        elif(Type == "set"):
             return setattr(ClassObj,Parans[0],Parans[1])
         return "Nothing value or variable reach in the class Map."
     
