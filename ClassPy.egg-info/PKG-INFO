@@ -1,6 +1,6 @@
 Metadata-Version: 2.2
 Name: ClassPy
-Version: 1.0.0
+Version: 1.0.1
 Summary: O Classpy é um pacote para aprimorar a orientação a objetos em projetos Python, oferecendo maior controle de fluxo e performance. Com suporte a métodos privados, protegidos e interfaces, ele expande as capacidades nativas da linguagem, tornando o design de software mais robusto e modular.
 Home-page: https://github.com/FelipeKatao/ClassPy
 Author: Felipe Catao

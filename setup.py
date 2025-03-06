@@ -22,5 +22,3 @@ setup(
     ],
     python_requires=">=3.6",
 )
-
-pypi-AgENdGVzdC5weXBpLm9yZwIkNzM0Nzg5YjYtNDIyMS00NmUwLWI3MDMtYTAzZTMyNDNiNTI0AAIqWzMsIjYwM2Q4ZGUyLWU2YzctNDQ3OC05ZmI3LTE2YzdlMTc1NmUwZSJdAAAGIOlxkZQT8NbUI1Q_bd_k2q4W6zXjwfC_XxkGaZo3cIiX
