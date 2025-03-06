@@ -1,0 +1,26 @@
+Metadata-Version: 2.2
+Name: ClassPy
+Version: 1.0.0
+Summary: O Classpy é um pacote para aprimorar a orientação a objetos em projetos Python, oferecendo maior controle de fluxo e performance. Com suporte a métodos privados, protegidos e interfaces, ele expande as capacidades nativas da linguagem, tornando o design de software mais robusto e modular.
+Home-page: https://github.com/FelipeKatao/ClassPy
+Author: Felipe Catao
+Author-email: cataofelipe@formigatech.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: pandas
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# ClassPy Documentation 
+## Project Base

@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+setup.py
+ClassPy/Classpy.py
+ClassPy/__init__.py
+ClassPy/flagsClass.py
+ClassPy/functionsClassPy.py
+ClassPy/invokeclass.py
+ClassPy/propsClass.py
+ClassPy/propsFunction.py
+ClassPy.egg-info/PKG-INFO
+ClassPy.egg-info/SOURCES.txt
+ClassPy.egg-info/dependency_links.txt
+ClassPy.egg-info/requires.txt
+ClassPy.egg-info/top_level.txt
