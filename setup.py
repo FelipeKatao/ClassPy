@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="ClassPy",  # Nome do pacote
-    version="1.0.0",    # Versão inicial
+    version="1.0.1",    # Versão inicial
     author="Felipe Catao",
     author_email="cataofelipe@formigatech.com",
     description="O Classpy é um pacote para aprimorar a orientação a objetos em projetos Python, oferecendo maior controle de fluxo e performance. Com suporte a métodos privados, protegidos e interfaces, ele expande as capacidades nativas da linguagem, tornando o design de software mais robusto e modular.",
@@ -23,3 +23,4 @@ setup(
     python_requires=">=3.6",
 )
 
+pypi-AgENdGVzdC5weXBpLm9yZwIkNzM0Nzg5YjYtNDIyMS00NmUwLWI3MDMtYTAzZTMyNDNiNTI0AAIqWzMsIjYwM2Q4ZGUyLWU2YzctNDQ3OC05ZmI3LTE2YzdlMTc1NmUwZSJdAAAGIOlxkZQT8NbUI1Q_bd_k2q4W6zXjwfC_XxkGaZo3cIiX
